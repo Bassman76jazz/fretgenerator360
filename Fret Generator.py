@@ -224,7 +224,7 @@ class SampleCommandCreatedEventHandler(adsk.core.CommandCreatedEventHandler):
             #fretsNo = inputs.addIntegerSliderCommandInput('fretsno', 'Number of frets', 1, 36)
             
             # Create the value input to get the width of the board. 
-            inputs.addValueInput('fretswidth', 'Width', 'mm', adsk.core.ValueInput.createByReal(5.5))   
+            inputs.addValueInput('fretswidth', 'Width', des.unitsManager.defaultLengthUnits, adsk.core.ValueInput.createByReal(5.5))   
                                                        
             # Create a check box to get if it should draw dots or not.
             inputs.addBoolValueInput('drawdots', 'Draw dots', True, '', False)  
