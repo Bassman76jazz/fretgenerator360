@@ -201,12 +201,12 @@ class SampleCommandCreatedEventHandler(adsk.core.CommandCreatedEventHandler):
             ui  = app.userInterface     
             # Get the commandS
             cmd = eventArgs.command 
-            
+            des = adsk.fusion.Design.cast(app.activeProduct)
             # Get the CommandInputs collection to create new command inputs.            
             inputs = cmd.commandInputs
     
             # Create the value input to get the scale. 
-            inputs.addValueInput('scalehigh', 'Scale high', 'mm', adsk.core.ValueInput.createByReal(63.5))
+            inputs.addValueInput('scalehigh', 'Scale high', des.unitsManager.defaultLengthUnits, adsk.core.ValueInput.createByReal(64.77))
                                               
             # Create a check box to get if it should be slanted  or not.
             inputs.addBoolValueInput('slanted', 'Slanted', True, '', False) 
