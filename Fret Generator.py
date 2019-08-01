@@ -212,7 +212,7 @@ class SampleCommandCreatedEventHandler(adsk.core.CommandCreatedEventHandler):
             inputs.addBoolValueInput('slanted', 'Slanted', True, '', False) 
                                                    
             # Create the value input to get the lower scale. 
-            scaleLow = inputs.addValueInput('scalelow', 'Scale Low', 'mm', adsk.core.ValueInput.createByReal(68))
+            scaleLow = inputs.addValueInput('scalelow', 'Scale Low', des.unitsManager.defaultLengthUnits, adsk.core.ValueInput.createByReal(68))
             scaleLow.isVisible = False
                                                
             # Create the value input to get the centre fret of the slanted scale. 
